@@ -117,83 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+})({"js/my_burger_script.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openMenuBtn: document.querySelector("[burger-menu-open]"),
+    closeMenuBtn: document.querySelector("[burger-menu-close]"),
+    modal: document.querySelector("[burger-menu]")
   };
+  refs.openMenuBtn.addEventListener("click", toggleModal);
+  refs.closeMenuBtn.addEventListener("click", toggleModal);
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  function toggleModal() {
+    refs.modal.classList.toggle("is-hidden--menu");
   }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\fonts\\TitanOne-Regular.eot":[["TitanOne-Regular.67ad3057.eot","fonts/TitanOne-Regular.eot"],"fonts/TitanOne-Regular.eot"],"./..\\fonts\\TitanOne-Regular.woff":[["TitanOne-Regular.bbf5b11f.woff","fonts/TitanOne-Regular.woff"],"fonts/TitanOne-Regular.woff"],"./..\\fonts\\TitanOne-Regular.ttf":[["TitanOne-Regular.c4ed25d0.ttf","fonts/TitanOne-Regular.ttf"],"fonts/TitanOne-Regular.ttf"],"./..\\fonts\\TitanOne-Regular.svg":[["TitanOne-Regular.26d74c72.svg","fonts/TitanOne-Regular.svg"],"fonts/TitanOne-Regular.svg"],"./..\\fonts\\DMSans-Regular.eot":[["DMSans-Regular.3488382a.eot","fonts/DMSans-Regular.eot"],"fonts/DMSans-Regular.eot"],"./..\\fonts\\DMSans-Regular.woff":[["DMSans-Regular.1fc219b6.woff","fonts/DMSans-Regular.woff"],"fonts/DMSans-Regular.woff"],"./..\\fonts\\DMSans-Regular.ttf":[["DMSans-Regular.51277dd6.ttf","fonts/DMSans-Regular.ttf"],"fonts/DMSans-Regular.ttf"],"./..\\fonts\\DMSans-Regular.svg":[["DMSans-Regular.b4bb6d6d.svg","fonts/DMSans-Regular.svg"],"fonts/DMSans-Regular.svg"],"./..\\fonts\\DMSans-Medium.eot":[["DMSans-Medium.6276092c.eot","fonts/DMSans-Medium.eot"],"fonts/DMSans-Medium.eot"],"./..\\fonts\\DMSans-Medium.woff":[["DMSans-Medium.ffafca4d.woff","fonts/DMSans-Medium.woff"],"fonts/DMSans-Medium.woff"],"./..\\fonts\\DMSans-Medium.ttf":[["DMSans-Medium.4e4c8d12.ttf","fonts/DMSans-Medium.ttf"],"fonts/DMSans-Medium.ttf"],"./..\\fonts\\DMSans-Medium.svg":[["DMSans-Medium.35fc481b.svg","fonts/DMSans-Medium.svg"],"fonts/DMSans-Medium.svg"],"./..\\fonts\\DMSans-Bold.eot":[["DMSans-Bold.3a4d982f.eot","fonts/DMSans-Bold.eot"],"fonts/DMSans-Bold.eot"],"./..\\fonts\\DMSans-Bold.woff":[["DMSans-Bold.e7459bef.woff","fonts/DMSans-Bold.woff"],"fonts/DMSans-Bold.woff"],"./..\\fonts\\DMSans-Bold.ttf":[["DMSans-Bold.0d25dc20.ttf","fonts/DMSans-Bold.ttf"],"fonts/DMSans-Bold.ttf"],"./..\\fonts\\DMSans-Bold.svg":[["DMSans-Bold.3ba11e65.svg","fonts/DMSans-Bold.svg"],"fonts/DMSans-Bold.svg"],"./..\\images\\desktop\\sectionbg.png":[["sectionbg.ef36b5d0.png","images/desktop/sectionbg.png"],"images/desktop/sectionbg.png"],"./..\\images\\mobile\\sectionbg.png":[["sectionbg.a923f3f0.png","images/mobile/sectionbg.png"],"images/mobile/sectionbg.png"],"./..\\images\\quote.svg":[["quote.994a615a.svg","images/quote.svg"],"images/quote.svg"],"./..\\images\\home-checked.svg":[["home-checked.0e6e8854.svg","images/home-checked.svg"],"images/home-checked.svg"],"./..\\images\\home.svg":[["home.941c208c.svg","images/home.svg"],"images/home.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +335,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/my_burger_script.js"], null)
+//# sourceMappingURL=/my_burger_script.be9f3bb4.js.map
