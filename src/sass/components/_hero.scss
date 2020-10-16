@@ -1,5 +1,5 @@
 .container {
-  max-width: 1280px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -10,6 +10,8 @@
   position: relative;
   display: flex;
   overflow: auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .hero-text {
   font-family: Titan One;
