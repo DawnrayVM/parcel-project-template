@@ -3,7 +3,7 @@ $color_active-0: #fff;
 $color_active-1: #d41443;
 $color_active-2: #c7133e;
 // ==== Header =====
-$color_header_bg: rgba(255, 184, 202, 0.7); //change to transparent
+$color_header_bg: rgba(255, 184, 202, 0.9); //change to transparent
 $color_header_popup-menu_bg: #e17992;
 $color_header_menu-item_border: #e18298;
 $color_button-light_bg: #fff;
@@ -11,6 +11,15 @@ $color_button-light_hover_bg: #ecebeb;
 
 // ==== Hero ====
 $color_hero_bg: #ffb8ca;
+
+// ==== Products =====
+$color_products_title-1: $color_active-1;
+$color_products_title-2: #ffa5ba;
+$color_product_title: #fff;
+$color_product_descr: #fff;
+$color_product--pink: #ffb8ca;
+$color_product--yellow: #f0d1a5;
+$color_product--green: #c2e297;
 
 // ==== dimentions ====
 $width_desktop: 1280px;
