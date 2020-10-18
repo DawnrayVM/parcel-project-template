@@ -647,6 +647,7 @@ button {
   color: #d41443;
   background-color: #fff;
   transition: background-color transition-duration(500ms) ease;
+  cursor: pointer;
 }
 .header__btn:hover {
   background-color: #ecebeb;
@@ -854,6 +855,7 @@ img {
   height: 24px;
   border: none;
   margin-right: 8px;
+  cursor: pointer;
 }
 @media screen and (min-width: 1280px) {
   .button__products {
@@ -891,6 +893,7 @@ img {
   width: 83px;
   height: 24px;
   border: none;
+  cursor: pointer;
 }
 @media screen and (min-width: 1280px) {
   .button__made {
@@ -1388,6 +1391,7 @@ img {
   font-size: 14px;
   line-height: 1.3;
   text-align: center;
+  cursor: pointer;
   border-color: transparent;
   padding: 0;
   margin-left: 30px;
@@ -2059,6 +2063,7 @@ li {
   font-size: 14px;
   line-height: 1.3;
   text-align: center;
+  cursor: pointer;
   border-color: transparent;
   padding: 0;
   margin-left: 30px;
