@@ -1071,10 +1071,22 @@ img {
     padding-bottom: 140px;
   }
 }
+@media screen and (max-width: 767px) {
+  .tradition {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-image: url("/sectionbg.a923f3f0.png");
+  }
+}
 @media screen and (min-width: 1280px) {
   .tradition {
     padding-top: 125px;
     padding-bottom: 140px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    background-image: url("/sectionbg.ef36b5d0.png");
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1279px) {
@@ -1087,18 +1099,6 @@ img {
   .tradition__wrapper {
     display: flex;
     padding-left: 92px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    background-image: url("/sectionbg.ef36b5d0.png");
-  }
-}
-@media (max-width: 767px) {
-  .wrap {
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-    background-image: url("/sectionbg.a923f3f0.png");
   }
 }
 .tradition__title {
@@ -1411,6 +1411,16 @@ li {
   margin-top: 121px;
   margin-bottom: 98px;
 }
+@media screen and (max-width: 767px) {
+  .section-product {
+    margin-top: 122px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .section-product {
+    margin-top: 127px;
+  }
+}
 
 @media screen and (max-width: 319px) {
   .container {
@@ -1444,6 +1454,8 @@ li {
 }
 @media screen and (min-width: 1280px) {
   .product {
+    position: relative;
+    top: 50px;
     margin-right: 55px;
     margin-left: 55px;
   }
@@ -1552,6 +1564,18 @@ li {
   margin-top: 0;
   margin-bottom: 0;
 }
+@media screen and (min-width: 768px) {
+  .product-tittle {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .product-tittle {
+    font-size: 30px;
+    line-height: 34px;
+  }
+}
 .product-tittle_name {
   font-family: Titan One;
   font-weight: 400;
@@ -1563,6 +1587,19 @@ li {
   color: #d41443;
   margin-top: 0;
   margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .product-tittle_name {
+    font-size: 48px;
+    line-height: 55px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .product-tittle_name {
+    font-size: 58px;
+    line-height: 66px;
+    margin-bottom: 49px;
+  }
 }
 
 .product-name::before {
